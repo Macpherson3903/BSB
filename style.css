@@ -101,6 +101,13 @@ button:hover {
 
 /* Media Queries for Responsiveness */
 @media screen and (max-width: 767px) {
+    body{
+        background: url("Free\ \ Basketball\,\ Court\,\ Game\ Background\ Images\,\ Basketball\ Court\ H5\ Background\ Photo\ Background\ PNG\ and\ Vectors.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+    }
+
     .container {
         flex-direction: column;
         /* Stack vertically on mobile */
