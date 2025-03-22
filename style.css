@@ -31,7 +31,6 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    /* Changed from height to min-height */
     background: url("—Pngtree—basketball ball on court generate_15524661.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -47,29 +46,22 @@ h1 {
 .container {
     width: 575px;
     max-width: 90%;
-    /* Changed from fixed 550px to percentage */
     height: auto;
-    /* Changed from fixed 385px */
     display: flex;
-    flex-wrap: wrap;
-    /* Added for responsiveness */
+    /* Maintained original flex */
     justify-content: space-between;
     align-items: center;
     background-color: var(--container-bg);
     padding: 20px;
-    /* Reduced from 70px for smaller screens */
     border-radius: 5px;
     margin: 20px auto;
-    /* Added small margin for mobile */
 }
 
 .left,
 .right {
     text-align: center;
     flex: 1;
-    /* Added for equal sizing */
     min-width: 200px;
-    /* Minimum width before wrapping */
 }
 
 .points {
@@ -94,14 +86,12 @@ button {
     width: 45px;
     height: 45px;
     background: none;
-    /* Changed 'unset' to 'none' - more widely supported */
     border: 2px solid var(--button-color);
     color: var(--button-color);
     border-radius: 5px;
     font-size: 18px;
     cursor: pointer;
     transition: all 400ms ease;
-    /* Improved transition syntax */
 }
 
 button:hover {
@@ -110,47 +100,51 @@ button:hover {
 }
 
 /* Media Queries for Responsiveness */
-@media screen and (max-width: 600px) {
-    h3 {
-        font-size: 24px;
-        /* Reduced header size */
-    }
-
-    .points {
-        width: 120px;
-        /* Smaller score display */
-        height: 90px;
-    }
-
-    .points p {
-        font-size: 60px;
-        /* Smaller score text */
-    }
-
-    button {
-        width: 35px;
-        /* Smaller buttons */
-        height: 35px;
-        font-size: 14px;
-    }
-
+@media screen and (max-width: 767px) {
     .container {
-        padding: 15px;
-        /* Reduced padding */
         flex-direction: column;
-        /* Stack teams vertically */
+        /* Stack vertically on mobile */
+        padding: 15px;
+        width: 90%;
     }
 
     .left,
     .right {
-        margin: 10px 0;
-        /* Add vertical spacing */
+        margin: 15px 0;
+        /* Increased vertical spacing */
         min-width: 0;
-        /* Allow full width */
+        width: 100%;
+        /* Ensure full width */
+    }
+
+    h3 {
+        font-size: 28px;
+        /* Adjusted header size */
+    }
+
+    .points {
+        width: 130px;
+        height: 100px;
+    }
+
+    .points p {
+        font-size: 70px;
+    }
+
+    button {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        margin: 0 5px;
+        /* Added horizontal spacing between buttons */
     }
 }
 
 @media screen and (max-width: 400px) {
+    h3 {
+        font-size: 24px;
+    }
+
     .points {
         width: 100px;
         height: 75px;
@@ -158,5 +152,11 @@ button:hover {
 
     .points p {
         font-size: 48px;
+    }
+
+    button {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
     }
 }
