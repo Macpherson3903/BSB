@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASKETBALL SCORE BOARD</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- google fonts -->
+    <!-- Verdana -->
+    <link href="https://fonts.googleapis.com/css2?family=Verdana&display=swap" rel="stylesheet">
+    <!-- Cursed Timer ULIL -->
+    <link href="https://fonts.cdnfonts.com/css/cursed-timer-ulil" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <h1>BASKETBALL SCORE BOARD</h1>
+        <div class="container">
+            <div class="left">
+                <h3>HOME</h3>
+                <div class="points">
+                    <p id="home-count">0</p>
+                </div>
+                <button onclick="homeScore(1)">+1</button>
+                <button onclick="homeScore(2)">+2</button>
+                <button onclick="homeScore(3)">+3</button>
+            </div>
+
+            <div class="right">
+                <h3>GUESTS</h3>
+                <div class="points">
+                    <p id="guest-count">0</p>
+                </div>
+                <button onclick="guestScore(1)">+1</button>
+                <button onclick="guestScore(2)">+2</button>
+                <button onclick="guestScore(3)">+3</button>
+            </div>
+        </div>
+    </main>
+    <script src="./index.js"></script>
+</body>
+
+</html>
