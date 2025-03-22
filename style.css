@@ -30,14 +30,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
+    /* Changed from height to min-height */
     background: url("—Pngtree—basketball ball on court generate_15524661.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
-h1{
+h1 {
     text-align: center;
     color: #092341;
     font-size: 50px;
@@ -45,22 +46,31 @@ h1{
 
 .container {
     width: 575px;
-    height: 385px;
-    max-width: 550px;
+    max-width: 90%;
+    /* Changed from fixed 550px to percentage */
+    height: auto;
+    /* Changed from fixed 385px */
     display: flex;
+    flex-wrap: wrap;
+    /* Added for responsiveness */
     justify-content: space-between;
     align-items: center;
     background-color: var(--container-bg);
-    padding: 70px;
+    padding: 20px;
+    /* Reduced from 70px for smaller screens */
     border-radius: 5px;
-    margin: 0 auto;
+    margin: 20px auto;
+    /* Added small margin for mobile */
 }
 
 .left,
 .right {
     text-align: center;
+    flex: 1;
+    /* Added for equal sizing */
+    min-width: 200px;
+    /* Minimum width before wrapping */
 }
-
 
 .points {
     display: flex;
@@ -80,19 +90,73 @@ h1{
     font-size: 90px;
 }
 
-button{
+button {
     width: 45px;
     height: 45px;
-    background: unset;
+    background: none;
+    /* Changed 'unset' to 'none' - more widely supported */
     border: 2px solid var(--button-color);
     color: var(--button-color);
     border-radius: 5px;
     font-size: 18px;
     cursor: pointer;
-    transition: 400ms;
+    transition: all 400ms ease;
+    /* Improved transition syntax */
 }
 
-button:hover{
+button:hover {
     background-color: var(--button-hover);
     border: 2px solid var(--button-hover);
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 600px) {
+    h3 {
+        font-size: 24px;
+        /* Reduced header size */
+    }
+
+    .points {
+        width: 120px;
+        /* Smaller score display */
+        height: 90px;
+    }
+
+    .points p {
+        font-size: 60px;
+        /* Smaller score text */
+    }
+
+    button {
+        width: 35px;
+        /* Smaller buttons */
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 15px;
+        /* Reduced padding */
+        flex-direction: column;
+        /* Stack teams vertically */
+    }
+
+    .left,
+    .right {
+        margin: 10px 0;
+        /* Add vertical spacing */
+        min-width: 0;
+        /* Allow full width */
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .points {
+        width: 100px;
+        height: 75px;
+    }
+
+    .points p {
+        font-size: 48px;
+    }
 }
